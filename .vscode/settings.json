@@ -1,0 +1,13 @@
+{
+    "cmake.configureOnOpen": true,
+    "cmake.generator": "Ninja",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "xaver.clang-format",
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy"
+    ],
+    "files.associations": {
+        "*.tpp": "cpp"
+    }
+}

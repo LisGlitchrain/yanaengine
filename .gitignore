@@ -1,0 +1,19 @@
+build/
+.cache/
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+compile_commands.json
+
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+
+.DS_Store
