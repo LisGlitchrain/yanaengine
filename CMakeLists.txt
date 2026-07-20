@@ -6,10 +6,14 @@ project(
     LANGUAGES CXX
 )
 
-set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+include(cmake/ProjectOptions.cmake)
+include(cmake/CompilerWarnings.cmake)
+include(cmake/StaticAnalyzers.cmake)
+include(cmake/Sanitizers.cmake)
+include(cmake/CCache.cmake)
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+yana_setup_project_options()
+
+include(CTest)
 
 add_subdirectory(sandbox)

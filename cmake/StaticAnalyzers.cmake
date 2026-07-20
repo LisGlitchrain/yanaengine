@@ -1,0 +1,18 @@
+option(YANA_ENABLE_CLANG_TIDY
+    "Enable clang-tidy"
+    ON
+)
+
+if(YANA_ENABLE_CLANG_TIDY)
+
+    find_program(CLANG_TIDY_EXE clang-tidy)
+
+    if(CLANG_TIDY_EXE)
+
+        set(CMAKE_CXX_CLANG_TIDY
+            ${CLANG_TIDY_EXE}
+        )
+
+    endif()
+
+endif()
