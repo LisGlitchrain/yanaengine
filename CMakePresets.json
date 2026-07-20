@@ -7,21 +7,20 @@
     },
     "configurePresets": [
         {
-            "name": "debug",
-            "displayName": "Debug",
+            "name": "debug-clang",
+            "displayName": "Debug-clang",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/debug",
+            "toolchainFile": "${sourceDir}/cmake/clang-toolchain.cmake",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_C_COMPILER": "clang",
-                "CMAKE_CXX_COMPILER": "clang++"
+                "CMAKE_BUILD_TYPE": "Debug"
             }
         }
     ],
     "buildPresets": [
         {
-            "name": "debug",
-            "configurePreset": "debug"
+            "name": "debug-clang",
+            "configurePreset": "debug-clang"
         }
     ]
 }
