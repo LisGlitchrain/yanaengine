@@ -7,13 +7,59 @@
     },
     "configurePresets": [
         {
-            "name": "debug-clang",
-            "displayName": "Debug-clang",
+            "name": "base",
+            "hidden": true,
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/debug",
-            "toolchainFile": "${sourceDir}/cmake/clang-toolchain.cmake",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        },
+        {
+            "name": "clang-base",
+            "hidden": true,
+            "inherits": "base",
+            "toolchainFile": "${sourceDir}/cmake/clang-toolchain.cmake"
+        },
+        {
+            "name": "gcc-base",
+            "hidden": true,
+            "inherits": "base",
+            "toolchainFile": "${sourceDir}/cmake/gcc-toolchain.cmake"
+        },
+        {
+            "name": "debug-clang",
+            "displayName": "Debug (Clang)",
+            "inherits": "clang-base",
+            "binaryDir": "${sourceDir}/build/clang/debug",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release-clang",
+            "displayName": "Release (Clang)",
+            "inherits": "clang-base",
+            "binaryDir": "${sourceDir}/build/clang/release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "debug-gcc",
+            "displayName": "Debug (GCC)",
+            "inherits": "gcc-base",
+            "binaryDir": "${sourceDir}/build/gcc/debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release-gcc",
+            "displayName": "Release (GCC)",
+            "inherits": "gcc-base",
+            "binaryDir": "${sourceDir}/build/gcc/release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
             }
         }
     ],
@@ -21,6 +67,21 @@
         {
             "name": "debug-clang",
             "configurePreset": "debug-clang"
+        },
+        {
+            "name": "release-clang",
+            "configurePreset": "release-clang"
+        },
+        {
+            "name": "debug-gcc",
+            "configurePreset": "debug-gcc"
+        },
+        {
+            "name": "release-gcc",
+            "configurePreset": "release-gcc"
         }
-    ]
+    ],
+    "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {}
+    }
 }

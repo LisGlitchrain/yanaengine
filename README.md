@@ -16,3 +16,16 @@ Target platforms:
 Linux
 Windows
 macOS
+
+## Requirements
+
+- CMake
+- Ninja
+- Clang (recommended)
+- GCC (supported)
+
+## Building
+
+cmake --preset debug-clang
+
+cmake --build --preset debug-clang
