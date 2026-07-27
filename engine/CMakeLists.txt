@@ -1,5 +1,8 @@
 add_library(yana_engine STATIC
     src/Engine.cpp
+    src/core/Assert.cpp
+    src/core/Log.cpp
+    src/core/time/Stopwatch.cpp
 )
 
 target_include_directories(yana_engine
