@@ -15,5 +15,12 @@ include(cmake/CCache.cmake)
 yana_setup_project_options()
 
 include(CTest)
-
+add_subdirectory(engine)
+add_subdirectory(application)
 add_subdirectory(sandbox)
+
+get_target_property(ENGINE_INCLUDE_DIRS yana_engine INTERFACE_INCLUDE_DIRECTORIES)
+message(STATUS "yana_engine INTERFACE_INCLUDE_DIRECTORIES = ${ENGINE_INCLUDE_DIRS}")
+
+get_target_property(APP_LINK_LIBS yana_application LINK_LIBRARIES)
+message(STATUS "yana_application LINK_LIBRARIES = ${APP_LINK_LIBS}")

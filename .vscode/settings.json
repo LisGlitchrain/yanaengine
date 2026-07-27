@@ -5,7 +5,8 @@
     "editor.defaultFormatter": "xaver.clang-format",
     "clangd.arguments": [
         "--background-index",
-        "--clang-tidy"
+        "--clang-tidy",
+        "--compile-commands-dir=${workspaceFolder}/build/clang/debug/"
     ],
     "files.associations": {
         "*.tpp": "cpp"
