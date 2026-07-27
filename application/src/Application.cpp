@@ -1,18 +1,12 @@
-#include "yana/application/Application.hpp"
+#include <yana/application/Application.hpp>
+#include <yana/engine/Engine.hpp>
 
-#include "yana/engine/Engine.hpp"
-
-namespace yana::application
-{
-Application::Application()
-    : engine_(std::make_unique<yana::engine::Engine>())
-{
-}
+namespace yana::application {
+Application::Application() : engine_(std::make_unique<yana::engine::Engine>()) {}
 
 Application::~Application() = default;
 
-int Application::Run()
-{
+int Application::Run() {
     engine_->Initialize();
     engine_->Shutdown();
     return 0;

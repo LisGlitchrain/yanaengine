@@ -1,7 +1,8 @@
-#include "yana/application/Application.hpp"
+#include <iostream>
+#include <yana/application/Application.hpp>
 
-int main()
-{
+int main() {
     yana::application::Application app;
+    std::cout << "Yana.engine";
     return app.Run();
 }

@@ -1,15 +1,10 @@
-#include "yana/engine/Engine.hpp"
+#include <yana/engine/Engine.hpp>
 
-namespace yana::engine
-{
+namespace yana::engine {
 Engine::Engine() = default;
 Engine::~Engine() = default;
 
-void Engine::Initialize()
-{
-}
+void Engine::Initialize() {}
 
-void Engine::Shutdown()
-{
-}
+void Engine::Shutdown() {}
 } // namespace yana::engine

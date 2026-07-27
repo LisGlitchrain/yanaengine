@@ -1,11 +1,6 @@
-find_program(CCACHE_PROGRAM ccache)
+find_program(YANA_CCACHE_EXE NAMES ccache)
 
-if(CCACHE_PROGRAM)
-
-    message(STATUS "Using ccache")
-
-    set(CMAKE_CXX_COMPILER_LAUNCHER
-        ${CCACHE_PROGRAM}
-    )
-
+if(YANA_CCACHE_EXE)
+    set(CMAKE_C_COMPILER_LAUNCHER "${YANA_CCACHE_EXE}")
+    set(CMAKE_CXX_COMPILER_LAUNCHER "${YANA_CCACHE_EXE}")
 endif()
